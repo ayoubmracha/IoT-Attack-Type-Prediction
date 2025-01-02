@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from xgboost import XGBClassifier
 import numpy as np
 
 # Charger le modèle et les objets de prétraitement
