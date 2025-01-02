@@ -4,11 +4,11 @@ import pickle
 import numpy as np
 
 # Charger le modèle et les objets de prétraitement
-with open(r"C:\Users\Ayoub\Desktop\app\model_IOT.pkl", "rb") as model_file:
+with open("model_IOT.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 print("Nombre de caractéristiques attendues par le modèle :", model.n_features_in_)
 
-with open(r"C:\Users\Ayoub\Desktop\app\preprocessing.pkl", "rb") as preprocess_file:
+with open("preprocessing.pkl", "rb") as preprocess_file:
     preprocessing_objects = pickle.load(preprocess_file)
     
 labelencoder = preprocessing_objects['labelencoder']
@@ -17,9 +17,9 @@ scaler = preprocessing_objects['scaler']
 top_features = preprocessing_objects['top_features']  # Charger les 30 caractéristiques importantes
 
 # Interface Streamlit
-st.image(r"C:\Users\Ayoub\Desktop\app\ehtp.png", use_column_width=True)
+st.image("ehtp.png", use_column_width=True)
 st.title("IoT Attack Type Prediction")
-st.sidebar.image(r"C:\Users\Ayoub\Desktop\app\iot.jpg", use_column_width=True)
+st.sidebar.image("iot.jpg", use_column_width=True)
 
 st.markdown("""
 ### Instructions :
