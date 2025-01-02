@@ -15,12 +15,12 @@ with open("preprocessing.pkl", "rb") as preprocess_file:
 labelencoder = preprocessing_objects['labelencoder']
 labelencoder_y = preprocessing_objects['labelencoder_y']
 scaler = preprocessing_objects['scaler']
-top_features = preprocessing_objects['top_features']  # Charger les 30 caractéristiques importantes
+top_features = preprocessing_objects['top_features']  # Charger les 40 caractéristiques importantes
 
 # Interface Streamlit
-st.image("ehtp.png", use_column_width=True)
+st.image("ehtp.png", use_container_width=True)
 st.title("IoT Attack Type Prediction")
-st.sidebar.image("iot.jpg", use_column_width=True)
+st.sidebar.image("iot.jpg", use_container_width=True)
 
 st.markdown("""
 ### Instructions :
@@ -64,7 +64,7 @@ if uploaded_file is not None:
     validation_data['proto'] = labelencoder.transform(validation_data['proto'])
     validation_data['service'] = labelencoder.transform(validation_data['service'])
 
-    # Sélectionner uniquement les 30 caractéristiques importantes
+    # Sélectionner uniquement les 40 caractéristiques importantes
     validation_data = validation_data[top_features]
     
     # Appliquer la normalisation sur les caractéristiques
